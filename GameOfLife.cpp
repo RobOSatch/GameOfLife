@@ -18,21 +18,32 @@ int main()
 
 	std::getline(myfile, a);
 
-	std::vector<int> results;
+	std::vector<int> dimensions;
 
 	std::string token;
 	std::istringstream tokenStream(a);
-	while (std::getline(tokenStream, token, ','))
-	{
-		results.push_back(std::stoi(token));
+	while (std::getline(tokenStream, token, ',')) {
+		dimensions.push_back(std::stoi(token));
 	}
 
+	std::vector<std::vector<int>> board;
+	int j = 0;
+	while (std::getline(myfile, a)) {
+		std::cout << a << std::endl;
+		board.push_back(std::vector<int>());
+		for (int i = 0; i < a.size(); i++) {
+			board[j].push_back(a[i] == 'x' ? 1 : 0);
+		}
+
+		j++;
+	}
 
 	// Get size of board
-	int x = results[0];
-	int y = results[1];
+	int x = dimensions[0];
+	int y = dimensions[1];
 
 	std::cout << x << " " << y << std::endl;
+	std::cout << board.size() << std::endl;
 
 	myfile.close();
 
