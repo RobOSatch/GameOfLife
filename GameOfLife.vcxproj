@@ -156,10 +156,12 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GameOfLife.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="FileManager.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

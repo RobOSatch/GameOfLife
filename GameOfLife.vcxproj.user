@@ -4,7 +4,7 @@
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LocalDebuggerCommandArguments>--load mytestfile --generations 2 --save myoutput --measure --mode seq</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>--load mytestfile --generations 10 --save myoutput --measure --mode seq</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

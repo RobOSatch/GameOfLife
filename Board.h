@@ -8,7 +8,7 @@ using namespace std;
 class Board
 {
 private:
-	void advance();
+	void advanceSequentially();
 	int getLocalSum(int i, int j);
 	int mod(int a, int b);
 

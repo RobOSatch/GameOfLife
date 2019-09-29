@@ -55,8 +55,8 @@ void FileManager::exportFile(const Board board, string filename)
 	myfile.open("OutputFiles/" + filename + ".gol");
 	myfile << x << "," << y << endl;
 
-	for (int i = 0; i < x; i++) {
-		for (int j = 0; j < y; j++) {
+	for (int i = 0; i < y; i++) {
+		for (int j = 0; j < x; j++) {
 			if (board.gamestate[i][j] == 0) {
 				myfile << ".";
 			}
