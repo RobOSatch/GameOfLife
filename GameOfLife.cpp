@@ -8,44 +8,52 @@
 #include <iterator>
 #include <sstream>
 
+#include "FileManager.h"
 
-int main()
+using namespace std;
+
+enum MODE {
+	seq
+};
+
+int main(int argc, char* argv[])
 {
-    std::cout << "Hello World!\n";
-	std::ifstream myfile;
-	myfile.open("InputFiles/random250_in.gol");
-	std::string a;
+	string inputfile;
+	string outputfile;
+	int generations = 0;
+	bool shouldMeasure = false;
+	MODE mode;
 
-	std::getline(myfile, a);
+	// Perform argument stuff
+	for (int i = 0; i < argc; i++) {
+		string currentArgument = argv[i];
 
-	std::vector<int> dimensions;
-
-	std::string token;
-	std::istringstream tokenStream(a);
-	while (std::getline(tokenStream, token, ',')) {
-		dimensions.push_back(std::stoi(token));
-	}
-
-	std::vector<std::vector<int>> board;
-	int j = 0;
-	while (std::getline(myfile, a)) {
-		std::cout << a << std::endl;
-		board.push_back(std::vector<int>());
-		for (int i = 0; i < a.size(); i++) {
-			board[j].push_back(a[i] == 'x' ? 1 : 0);
+		if (currentArgument == "--load") {
+			inputfile = argv[i + 1];
 		}
 
-		j++;
+		if (currentArgument == "--generations") {
+			generations = stoi(argv[i + 1]);
+		}
+
+		if (currentArgument == "--save") {
+			outputfile = argv[i + 1];
+		}
+
+		if (currentArgument == "--measure") {
+			shouldMeasure = true;
+		}
+
+		if (currentArgument == "--mode") {
+			if (argv[i + 1] == "seq") {
+				mode = seq;
+			}
+		}
 	}
-
-	// Get size of board
-	int x = dimensions[0];
-	int y = dimensions[1];
-
-	std::cout << x << " " << y << std::endl;
-	std::cout << board.size() << std::endl;
-
-	myfile.close();
+	
+	Board* board = FileManager::importFile(inputfile);
+	board->advanceGenerationsBy(generations);
+	FileManager::exportFile(*board, outputfile);
 
 	return 0;
 }

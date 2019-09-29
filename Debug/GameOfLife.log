@@ -1,3 +1,2 @@
-﻿  GameOfLife.cpp
-C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\GameOfLife.cpp(34): warning C4018: '<': signed/unsigned mismatch
+﻿  Board.cpp
   GameOfLife.vcxproj -> C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\Debug\GameOfLife.exe
