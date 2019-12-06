@@ -58,7 +58,7 @@ std::string getReadableString(double duration) {
 		mil = "0" + mil;
 	}
 
-	return hr + ":" + min + ":" + sec + ":" + mil;
+	return hr + ":" + min + ":" + sec + "." + mil;
 }
 
 void Timer::start()
@@ -71,5 +71,5 @@ void Timer::stop()
 	t2 = high_resolution_clock::now();
 	duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
 
-	std::cout << getReadableString(time_span.count()) << ";" << std::endl;
+	std::cout << getReadableString(time_span.count()) << ";";
 }

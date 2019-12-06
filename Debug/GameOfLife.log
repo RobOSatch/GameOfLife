@@ -1,6 +1,7 @@
 ﻿  Board.cpp
   FileManager.cpp
-C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\FileManager.cpp(33): warning C4018: '<': signed/unsigned mismatch
   GameOfLife.cpp
+C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\FileManager.cpp(33,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\GameOfLife.cpp(83,46): error C2039: 'y': is not a member of 'Board'
   Generating Code...
-  GameOfLife.vcxproj -> C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\Debug\GameOfLife.exe
+C:\Users\robar\Desktop\FH\Efficient Programming\GameOfLife\Board.h(8): message : see declaration of 'Board'
